@@ -1,0 +1,67 @@
+<div class="show-profile-image">
+    <%= attachment_image_tag @user, :profile_image, class: "profile-image-img" %>
+</div>
+
+<div class="show-main">
+    <section class="show-about">
+        <div class="show-about-text">
+            <div class="show-about-text-profile">
+                <div class="show-about-text-profile-body">
+                    <div class="show-profile-name">
+                        <h4 class="show-nanami-name">岡 本 七 海
+                        <br><h6 class="show-nanami-name">O k a m o t o N a n a m i</h6>
+                        </h4>
+                    </div>
+                    <div class="show-profile-day">
+                        <h5>2000 8.18</h5>
+                    </div>
+                    <div class="show-profile-place">
+                        <h5>京都府出身</h5>
+                    </div>
+                    <div class="show-profile-like">
+                        <h5><%= @user.like %></h5>
+                    </div>
+                    <div class="show-profile-can">
+                        <h5><%= @user.can %></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="introduce">
+            <h1 class="introduce-heading">
+            <span>
+                Introduce
+            </span>
+            </h1>
+            </div>
+           <div class="user-show-picture-image">
+                <div class="show-picture-image"><%= attachment_image_tag @user, :show_image, class: "show-picture-image-img" %></div>
+            </div>
+            <h3 class="show-about-text-heading"><%= @user.show_title %></h3>
+            <p class="show-about-text-p">
+                <span class="show-about-text-p">
+                    <%= @user.show_body %>
+               </span>
+            </p>
+            <div class="pictures-btn-center">
+            <div class="show-pictures-btn">
+            <%= link_to "Picture一覧", pictures_path, class: "btn btn-outline-info" %>
+            </div>
+            </div>
+            
+            <div class="user-show-picture-image">
+                <div class="show-picture-image"><%= attachment_image_tag @user, :active_image, class: "show-picture-image-img" %></div>
+            </div>
+            <h3 class="show-about-text-heading"><%= @user.active_title %></h3>
+            <p class="show-about-text-p">
+                <span class="show-about-text-p">
+                    <%= @user.active_body %>
+               </span>
+            </p>
+        </div>
+    </section>
+</div>
+<div class="user-edit-btn">
+    <% if user_signed_in? %>
+        <%= link_to "User編集", edit_user_path(@user), class: "fas fa-user-edit nav-link" %>
+    <% end %>
+</div>

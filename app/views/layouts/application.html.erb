@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NanamiBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabigothic.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  </head>
+
+  <body>
+    <header>
+      <div class="header-logo">
+        <%= link_to root_path, class: "link-none" do %>
+        <h2 class="link-none">
+          <%= image_tag "logo.png", class: "logo-image" %>
+        </h2>
+        <% end %>
+      </div>
+      <div id="nav-toggle">
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      
+      <div id="gloval-nav">
+        <nav>
+          <ul>
+            <% if user_signed_in? %>
+            <li class="nav-item">
+              <%= link_to "HOMEへ戻る", root_path, class: "fas fa-home nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Picture一覧", pictures_path, class: "fas fa-palette nav-link" %>
+            </li>
+            <div class="nanami-only">
+              <li class="nav-item">
+                <h3 class="text">七海専用リンク</h3>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Picture投稿", new_picture_path, class: "fas fa-plus-circle nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Illustrator詳細", user_path(current_user.id), class: "fas fa-user nav-link" %>
+              </li>
+            </div>
+            <% else %>
+            <li class="nav-item">
+              <%= link_to "HOMEへ戻る", root_path, class: "fas fa-home nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Picture一覧", pictures_path, class: "fas fa-palette nav-link" %>
+            </li>
+            <% end %>
+          </ul>
+        </nav>
+      </div><!-- /#gloval-nav -->
+    </header>
+    <%= yield %>
+    <footer>
+      
+      <div class="footer-text">
+        <h6><%= link_to "Home", root_path, class: "footer-nav" %></h6>
+        <h6><%= link_to "Pictures", pictures_path, class: "footer-nav" %></h6>
+        <h6><%= link_to "運営Login", new_user_session_path, class: "footer-nav" %></h6>
+      </div>
+      <div class="footer-sns">
+        <%= link_to "https://twitter.com/__nana_la__" do %>
+          <i class="fab fa-twitter fa-2x"></i>
+        <% end %>
+        <%= link_to "https://www.instagram.com/sju_hav_/" do %>
+          <i class="fab fa-instagram fa-2x"></i>
+        <% end %>
+      </div>
+      <p class="copywrite">
+        © 2020 Nanami Blog
+      </p>
+    </footer>
+  </body>
+</html>
+
+ 
+              
+           

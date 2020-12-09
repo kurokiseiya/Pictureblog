@@ -1,0 +1,49 @@
+<div class="container">
+  <h1>プロフィール編集</h1>
+  <%= form_with model:@user, local:true do |f| %>
+  <div class="mylike">
+    <h3>自己紹介</h3>
+    <div class="profile-image-edit">
+      <label for="inputImage" class="profile-image-title">ProfileImage</label>
+      <%= f.attachment_field :profile_image, placeholder: "プロフィール画像", class: "profile-image-form" %>
+    </div>
+    <div class="love-edit">
+      <label for="inputlike" class="like-title">好きなもの</label>
+      <%= f.text_area :like, class: "like-form" %>
+      <label for="inputcan" class="can-title">得意なこと</label>
+      <%= f.text_area :can, class: "can-form" %>
+    </div>
+  </div>
+  <div class="myintroduce">
+    <h3>Introduce</h3>
+    <div class="introduce-edit">
+      <h4>Introduce1</h4>
+      <div class="introduce-image-edit">
+        <label for="inputImage" class="introduce-image-title">Introduce画像1</label>
+        <%= f.attachment_field :show_image, placeholder: "Introduce画像1", class: "introduce-image-form" %>
+      </div>
+      <div class="introduce-text">
+        <label for="inputintroduce_title1" class="introduce-text-title">Introduceタイトル1</label>
+        <%= f.text_field :show_title, class: "introduce-title-form" %>
+        
+        <label for="inputintroduce_body1" class="introduce-text-body">Introduceテキスト1</label>
+        <%= f.text_area :show_body, class: "introduce-body-form" %>
+      </div>
+    </div>
+    <div class="introduce-edit">
+      <h4>Introduce2</h4>
+      <div class="introduce-image-edit">
+        <label for="inputImage" class="introduce-image-title">Introduce画像2</label>
+        <%= f.attachment_field :active_image, placeholder: "Introduce画像2", class: "introduce-image-form" %>
+      </div>
+      <div class="introduce-text">
+      <label for="inputintroduce_title2" class="introduce-text-title">Introduceタイトル2</label>
+      <%= f.text_field :active_title, class: "introduce-title-form" %>
+      <label for="inputintroduce_body2" class="introduce-text-body">Introduceテキスト2</label>
+      <%= f.text_area :active_body, class: "introduce-body-form" %>
+      </div>
+    </div>
+  </div>
+    <%= f.submit "変更を保存", class: "btn btn-info" %>
+  <% end %>
+</div>

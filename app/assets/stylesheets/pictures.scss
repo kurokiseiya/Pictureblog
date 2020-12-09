@@ -1,0 +1,165 @@
+// Place all the styles related to the Pictures controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.illust-image-show {
+  width: 100%;
+  height: auto;
+}
+
+.illust-text {
+  padding: 20px 0 0 0;
+  .illust-day {
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  .illust-title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    color: #222222;
+    }
+  }
+}
+  .illust-caption {
+    width: 85%;
+    margin: 0 auto;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    line-height: 2.0;
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+.comment-new {
+    margin-top: 50px;
+    form {
+      .form-group {
+        label {
+          font-weight: bold;
+        }
+        #exampleFormControlInput1 {
+          width: 20%;
+        }
+      } 
+   }
+}
+
+.illust-pictures-btn {
+  .btn-outline-info {
+    margin: 0;
+  }
+}
+@media screen and (max-width:768px) {
+  .illust-image {
+    width: 100%;
+    height: auto;
+  }
+.illust-text {
+  padding: 20px 0 0 0;
+  .illust-day {
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  .illust-title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    h3 {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: bold;
+    color: #222222;
+    }
+  }
+}
+  .illust-caption {
+    width: 85%;
+    margin: 0 auto;
+    font-family: 'Sawarabi Gothic', sans-serif;
+    line-height: 2.0;
+    font-size: 1.3rem;
+    text-align: left;
+  }
+}
+
+.illust-pictures-btn {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.illust-edit {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.comment{
+  width: 90%;
+  margin: 90px auto;
+  .comment-area {
+    margin-bottom: 40px;
+    h4 {
+      color: orange;
+    }
+    .comment-text {
+      padding: 10px 10px 10px 10px;
+      margin-top: 20px;
+      .comment-small {
+        display: flex;
+        margin: 0 0 5px 0;
+        font-size: 0.8;
+        .comment-day {
+          margin: 0 20px 0 0;
+          font-weight: bold;
+        }
+        .comment-name {
+          margin: 0;
+          font-family: "Rounded Mplus 1c";
+          .fa-user {
+            color: #444444;
+          }
+        }
+      }
+      .comment-body {
+        margin: 0;
+        font-size: 0.8;
+        font-family: "Sawarabi Gothic";
+      }
+    }
+  }
+  
+  .comment-new {
+    margin: 0;
+    .new-name {
+      .new-name-title {
+      display: block;
+      font-weight: bold;
+      }
+    }
+    .new-body {
+      margin: 20px 0 20px 0;
+      .new-body-title {
+        display: block;
+        font-weight: bold;
+      }
+      .new-body-form {
+        width: 80%;
+      }
+    }
+    .btn {
+      background-color: #EEEEEE;
+      color: #222222;
+    }
+   }
+}
+
+.notice-message {
+  margin-bottom: 10px;
+  .success-message {
+    color: green;
+  }
+  .alert-message {
+    color: red;
+  }
+}

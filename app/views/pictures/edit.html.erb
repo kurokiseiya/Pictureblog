@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>イラスト画像編集フォーム</h1>
+  <%= form_with model: @picture, local:true do |f| %>
+    <h4>イラスト画像</h4>
+    <%= f.attachment_field :image %>
+    <h4>イラストタイトル</h4>
+    <%= f.text_field :picture %>
+    <h4>イラスト説明</h4>
+    <%= f.text_area :caption %>
+    <%= f.submit "保存" %>
+  <% end %>
+</div>
